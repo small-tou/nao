@@ -1,4 +1,4 @@
-var User = new BaseModel("users");
+var User = new BaseModel("user");
 var UserDefine = new BaseModel("userdefines");
 var UUID = require("node-uuid");
 module.exports = {
