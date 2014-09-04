@@ -14,7 +14,7 @@ module.exports = {
                 }
                 if(frompointy>topointy){
                     var t = topointy;
-                    topointx = frompointy;
+                    topointy = frompointy;
                     frompointy = t;
                 }
                 InfoModel.findAll().where(["longitude>? and longitude<? and latitude>? and latitude<?",frompointx,topointx,frompointy,topointy]).done(function(error,infos){
