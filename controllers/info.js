@@ -7,7 +7,16 @@ module.exports = {
                 var topointx = req.query.topointx;
                 var frompointy = req.query.frompointy;
                 var topointy = req.query.topointy;
-
+                if(frompointx>topointx){
+                    var t = topointx;
+                    topointx = frompointx;
+                    frompointx = t;
+                }
+                if(frompointy>topointy){
+                    var t = topointy;
+                    topointx = frompointy;
+                    frompointy = t;
+                }
                 InfoModel.findAll().where(["longitude>? and longitude<? and latitude>? and latitude<?",frompointx,topointx,frompointy,topointy]).done(function(error,infos){
                     res.send(infos)
                 })
